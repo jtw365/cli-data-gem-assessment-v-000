@@ -6,3 +6,12 @@ require "bundler/setup"
 require './lib/bball_statistics'
 
 BballStatistics::CLI.new.call
+
+# greet user and show a list of teams (maybe have a timer before the greeting and list of teams)
+# list teams in numberical order, sorted by name
+# ask user which team they would like to select
+# once they select a team, ask if they want to see team info or player stats
+  # Team Info will show Current Season Record, Coach, Rank in Conference
+  # Player Stats will list player names
+  # Ask user to choose particular player
+    # list stats of the player PTS, REBS, Assists & Salary
