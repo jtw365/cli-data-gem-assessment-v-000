@@ -20,11 +20,17 @@ class Scraper
     # binding.pry
   end
 
+  def scrape_team_data # toronto
+    team_record = doc.css("div#meta p")[2].text.strip.split(" ")[1] # "59-23,"
+    coach_name = doc.css("div#meta p")[4].text.strip.split(" ")[1..2].join(" ") #" Dwane Casey"
+  end
+
 
   def scrape_players
     url = "https://www.basketball-reference.com/teams/TOR/2018.html"
     doc = Nokogiri::HTML(open(url))
     players = []
+    binding.pry
     doc.css("div#div_roster tr").css("tr").css("a").each do |player|
       puts player.text
     end # player name
