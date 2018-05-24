@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+# puts "Hey guys and gals"
+
+require "bundler/setup"
+require './lib/bball_statistics'
+
+BballStatistics::CLI.new.call
