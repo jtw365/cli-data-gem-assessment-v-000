@@ -16,7 +16,7 @@ class Scraper
     doc.css("ul .division a").each do |team|
       puts team.text
     end
-    teams
+    puts teams
     # binding.pry
   end
 
