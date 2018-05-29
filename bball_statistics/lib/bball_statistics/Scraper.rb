@@ -36,7 +36,7 @@ class Scraper
     url = "https://www.basketball-reference.com/teams/TOR/2018.html"
     doc = Nokogiri::HTML(open(url))
     players = []
-    binding.pry
+    binding.pry # closest I can get is doc.css("div#all_per)game")
     doc.css("div#div_roster tr").css("tr").css("a").each do |player|
       puts player.text
     end # player name
