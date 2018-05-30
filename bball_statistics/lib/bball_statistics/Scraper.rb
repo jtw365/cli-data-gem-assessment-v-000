@@ -51,15 +51,17 @@ class Scraper
   def scrape_season_leaders
     url = "https://www.basketball-reference.com/leagues/NBA_2018_leaders.html"
     doc = Nokogiri::HTML(open(url))
-    binding.pry
+    # binding.pry
+    puts "Assists Per Game Leaders"
     
+    puts "- - - - - - - - - - - -"
     assist = doc.css("div#leaders_ast_per_g tr")
     assist.each {|a| puts a.css("td").text}
     
-    puts "Assists Per Game Leaders"
-    doc.css("div#leaders_ast_per_g tr td").each do |a| #assist leader
-      puts a.text.strip
-    end
+  
+    # doc.css("div#leaders_ast_per_g tr td").each do |a| #assist leader
+    #   puts a.text.strip
+    # end
   end
   
 end
