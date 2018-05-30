@@ -21,4 +21,31 @@ list nba teams
                 list roster
               if teams
                 list of teams
+------
+ask user if they want to see nba teams or season stat leaders
+if nba teams
+  list nba teams
+    ask user to select a team
+      show coach, team record and roster
+      ask user if they want to see nba teams or season stat leaders
+        if nba teams
+          list nba teams
+        elsif season stat leaders
+          list season stat leaders
+        else
+          exit application
         
+if season stat leaders
+  list season stat leader categories
+    user selects which category they want to see the season leaders (Points, Assists, Rebounds, Blocks, Steals, etc)
+      list season leaders in that category
+        ask user if they want to see more stat categories, nba teams or exit
+          if stat categories
+            show stat categories
+              ask for user input
+          if nba teams
+            list nba teams
+              ask for user input
+          if exit
+            close the application
+      
