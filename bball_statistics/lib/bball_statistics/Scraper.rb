@@ -19,29 +19,26 @@ class Scraper
   end
 
   def scrape_team_data # toronto
-    url = "https://www.basketball-reference.com/leagues/NBA_2018_leaders.html"
+    url = "https://www.basketball-reference.com/teams/TOR/2018.html"
     doc = Nokogiri::HTML(open(url))
-    binding.pry
 
     team_record = doc.css("div#meta p")[2].text.strip.split(" ")[1].split(",").join() # "59-23,"
     coach_name = doc.css("div#meta p")[4].text.strip.split(" ")[1..2].join(" ") #" Dwane Casey"
     puts "Coach: #{coach_name}"
     puts "Team record: #{team_record}"
-    # binding.pry
 
   end
 
 
-  # def scrape_players
-  #   url = "http://www.nba.com/teams"
-  #   doc = Nokogiri::HTML(open(url))
-  #   players = []
-  #   # closest I can get is doc.css("div#all_per)game")
-  #   doc.css("div#div_roster tr").css("tr").css("a").each do |player|
-  #     puts player.text
-  #   end # player name
-  #
-  # end
+  def scrape_players
+    url = "https://www.basketball-reference.com/teams/TOR/2018.html"
+    doc = Nokogiri::HTML(open(url))
+    players = []
+    doc.css("div#div_roster tr").css("tr").css("a").each do |player|
+      puts player.text
+    end
+
+  end
 
 
   def scrape_season_leaders
@@ -63,8 +60,8 @@ class Scraper
 end
 
 Scraper.new.scrape_teams
-# puts "------------"
-# Scraper.new.scrape_team_data
-# puts "------------"
-# Scraper.new.scrape_players
-# Scraper.new.scrape_season_leaders
+puts "------------"
+Scraper.new.scrape_team_data
+puts "------------"
+Scraper.new.scrape_players
+Scraper.new.scrape_season_leaders
