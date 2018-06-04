@@ -2,16 +2,16 @@
 class Teams
 
   attr_accessor :name
+  attr_reader :head_coach, :team_record, :players
 
   @@all = []
 
-  def initialize(team_name, head_coach, team_record, players_names)
+  def initialize(team_name)
     @team_name = team_name
     @head_coach = head_coach
     @team_record = team_record
+    @players = players
   end
 
-  def team
-
-  end
+  
 end

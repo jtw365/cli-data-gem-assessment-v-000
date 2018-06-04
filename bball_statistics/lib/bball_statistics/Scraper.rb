@@ -34,6 +34,7 @@ class Scraper
     url = "https://www.basketball-reference.com/teams/TOR/2018.html"
     doc = Nokogiri::HTML(open(url))
     players = []
+    binding.pry
     doc.css("div#div_roster tr").css("tr").css("a").each do |player|
       puts player.text
     end
@@ -59,9 +60,9 @@ class Scraper
 
 end
 
-Scraper.new.scrape_teams
+# Scraper.new.scrape_teams
 puts "------------"
-Scraper.new.scrape_team_data
+# Scraper.new.scrape_team_data
 puts "------------"
 Scraper.new.scrape_players
-Scraper.new.scrape_season_leaders
+# Scraper.new.scrape_season_leaders
