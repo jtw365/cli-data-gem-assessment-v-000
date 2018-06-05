@@ -12,9 +12,13 @@ class Scraper
     @teams = []
     all_teams = doc.css("#all_teams_active tr.full_table")
     all_teams.each do |t|
-      teams << t.css("a").text.strip
+      team = Team.new(t.css("a").text.strip, t.css("a").attribute("href").value)
+      @teams << team
     end
-    puts teams
+    @teams.each do |team|
+      puts team.id.to_s + " " + team.team_name
+    end
+
 
   end
 
@@ -59,10 +63,3 @@ class Scraper
   end
 
 end
-
-# Scraper.new.scrape_teams
-puts "------------"
-# Scraper.new.scrape_team_data
-puts "------------"
-Scraper.new.scrape_players
-# Scraper.new.scrape_season_leaders

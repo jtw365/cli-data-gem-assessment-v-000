@@ -2,7 +2,14 @@ require 'pry'
 class BballStatistics::CLI
 
   def call
-    scrape_teams
+    Scraper.new.scrape_teams
+    # puts "------------"
+    # Scraper.new.scrape_team_data
+    # puts "------------"
+    # Scraper.new.scrape_players
+    # Scraper.new.scrape_season_leaders
+
   end
+
 
 end
