@@ -6,7 +6,7 @@ class Team
   @@all = []
   @@id = 1
 
-  def initialize(team_name,team_url)
+  def initialize(team_name, team_url)
     @team_name = team_name
     @team_url = team_url
     @id = @@id
