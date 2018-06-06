@@ -14,7 +14,8 @@ class Team
     @@all << self
   end
 
-  def teams
+  def self.all
+    
 
 
 end
