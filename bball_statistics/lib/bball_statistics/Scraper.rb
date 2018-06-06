@@ -42,6 +42,7 @@ class Scraper
     end
 
     player = doc.css("table#roster").css("tbody").css("tr")
+      puts a.text
 
 
   end
