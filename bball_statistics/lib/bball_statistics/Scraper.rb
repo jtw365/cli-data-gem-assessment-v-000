@@ -41,7 +41,17 @@ class Scraper
       puts player.text
     end
 
-    players = doc.css("table#roster").css("tbody").css("tr")[1..18]
+    player = doc.css("table#roster").css("tbody").css("tr")
+    player.each do |a|
+      puts a.text
+      #92Lucas NogueiraC7-0241July 26, 1992br3
+      # 17Jonas ValanciunasC7-0265May 6, 1992lt5
+      # 55Delon WrightPG6-5183April 26, 1992us2University of Utah
+      # 24Norman PowellSG6-4215May 25, 1993us2University of California, Los Angeles
+      # 22Malachi RichardsonSG6-6205January 5, 1996us1Syracuse University
+      # 10DeMar DeRozanSG6-7221August 7, 1989us8University of Southern California
+      # 42Jakob PoeltlC7-0248October 15, 1995at1University of Utah
+    end
 
 
   end

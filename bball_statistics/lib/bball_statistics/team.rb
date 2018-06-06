@@ -11,7 +11,13 @@ class Team
     @team_url = team_url
     @id = @@id
     @@id += 1
+    @@all << self
   end
+
+  def self.all
+    @@all
+  end 
+
 
 
 end
