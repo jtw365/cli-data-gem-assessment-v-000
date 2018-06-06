@@ -4,6 +4,7 @@ require 'open-uri'
 
 class Scraper
   attr_accessor :doc, :teams
+
   def scrape_teams
     url = "https://www.basketball-reference.com/teams/"
     doc = Nokogiri::HTML(open(url))
@@ -11,14 +12,11 @@ class Scraper
     all_teams = doc.css("#all_teams_active tr.full_table")
     all_teams.each do |t|
       team = Team.new(t.css("a").text.strip, t.css("a").attribute("href").value)
+      # binding.pry
       @teams << team
     end
-    @teams.each do |team|
-      puts team.id.to_s + " https://www.basketball-reference.com" + team.team_url + "2018.html"
-    end
-    
-    # puts teams
 
+    @teams.each {|team| puts team.id.to_s + ") " + team.team_name}
 
   end
 
@@ -42,6 +40,9 @@ class Scraper
     doc.css("div#div_roster tr").css("tr").css("a").each do |player|
       puts player.text
     end
+
+    players = doc.css("table#roster").css("tbody").css("tr")[1..18]
+
 
   end
 
