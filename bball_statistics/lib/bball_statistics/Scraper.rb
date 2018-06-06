@@ -41,7 +41,7 @@ class Scraper
       puts player.text
     end
 
-    players = doc.css("table#roster").css("tbody").css("tr")[1..18]
+    player = doc.css("table#roster").css("tbody").css("tr")
 
 
   end
