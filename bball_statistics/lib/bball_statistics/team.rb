@@ -11,9 +11,10 @@ class Team
     @team_url = team_url
     @id = @@id
     @@id += 1
+    @@all << self
   end
 
-  def nba_teams
+  def 
 
 
 end
