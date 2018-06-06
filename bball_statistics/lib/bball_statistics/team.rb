@@ -14,7 +14,7 @@ class Team
     @@all << self
   end
 
-  def 
+  def teams
 
 
 end
