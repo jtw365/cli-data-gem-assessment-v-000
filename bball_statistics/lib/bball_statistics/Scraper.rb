@@ -42,7 +42,9 @@ class Scraper
     end
 
     player = doc.css("table#roster").css("tbody").css("tr")
+    player.each do |a|
       puts a.text
+    end
 
 
   end
