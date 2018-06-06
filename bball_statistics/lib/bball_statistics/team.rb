@@ -13,5 +13,7 @@ class Team
     @@id += 1
   end
 
+  def nba_teams
+
 
 end
