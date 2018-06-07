@@ -65,7 +65,9 @@ class Scraper
 
     puts "- - - - - - - - - - - -"
     assist = doc.css("div#leaders_ast_per_g tr")
-    assist.each {|a| puts a.css("td").text}
+    assist_leader_name = assist.each do |a|
+     puts a.css("td.who").text.split(" ")[0..1].join(" ")
+    end
 
 
     # doc.css("div#leaders_ast_per_g tr td").each do |a| #assist leader
